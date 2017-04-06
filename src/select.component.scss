@@ -38,25 +38,32 @@ ng-select {
         }
 
         >div.single {
-            display: flex;
             height: 30px;
             width: 100%;
+            white-space: nowrap;
+            margin: 3px 0;
 
             >div.value,
             >div.placeholder {
-                flex: 1;
                 line-height: 30px;
-                overflow: hidden;
+                
                 padding: 0 10px;
                 white-space: nowrap;
+                display: inline-block;
             }
 
             >div.placeholder {
                 color: #a9a9a9;
+                width: calc(100% - 35px);
+            }
+
+            >div.value {
+                width: calc(100% - 70px);
             }
 
             >div.clear,
             >div.toggle {
+                display: inline-block;
                 color: #aaa;
                 line-height: 30px;
                 text-align: center;

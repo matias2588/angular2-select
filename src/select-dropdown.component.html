@@ -14,7 +14,7 @@
         #optionsList>
         <ul
             (wheel)="onOptionsWheel($event)">
-            <li *ngFor="let option of optionList.filtered"
+            <li *ngFor="let option of optionList.filtered.slice(0, maxItems)"
                 [ngClass]="{'highlighted': option.highlighted, 'selected': option.selected, 'disabled': option.disabled}"
                 [ngStyle]="getOptionStyle(option)"
                 (click)="onOptionClick(option)"
