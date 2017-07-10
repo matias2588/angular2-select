@@ -63,7 +63,7 @@ export class SelectDropdownComponent
     }
 
     ngAfterViewInit() {
-        this.moveHighlightedIntoView();
+        //this.moveHighlightedIntoView();
         if (!this.multiple && this.filterEnabled) {
             this.filterInput.nativeElement.focus();
         }
@@ -129,7 +129,7 @@ export class SelectDropdownComponent
         }
     }
 
-    moveHighlightedIntoView() {
+    /*moveHighlightedIntoView() {
 
         let list = this.optionsList.nativeElement;
         let listHeight = list.offsetHeight;
@@ -153,7 +153,7 @@ export class SelectDropdownComponent
                 list.scrollTop = itemTop;
             }
         }
-    }
+    }*/
 
     private handleOptionsWheel(e: any) {
         let div = this.optionsList.nativeElement;

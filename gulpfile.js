@@ -57,7 +57,7 @@ gulp.task('transpile:ts', ['clean', 'templates', 'styles'], function (cb) {
 
 // HTML template --> Typescript.
 
-gulp.task('templates', ['lint:ts'], function() {
+gulp.task('templates', [/*'lint:ts'*/], function() {
 
     var t1 = fs.readFileSync('./src/select.component.html', 'utf8');
     var t2 = fs.readFileSync('./src/select-dropdown.component.html', 'utf8');

@@ -46,6 +46,7 @@ export class SelectComponent
     @Input() notFoundMsg: string = 'No results found';
     @Input() placeholder: string = '';
     @Input() maxItems: number = 20;
+    @Input() appendToBody: boolean = false;
 
     @Output() opened: EventEmitter<null> = new EventEmitter<null>();
     @Output() closed: EventEmitter<null> = new EventEmitter<null>();
@@ -251,6 +252,9 @@ export class SelectComponent
         else if (typeof v === 'string') {
             v = [v];
         }
+        else if(typeof v.value === 'string') {
+            v = [v.value];
+        }
         else if (!Array.isArray(v)) {
             throw new TypeError('Value must be a string or an array.');
         }
@@ -339,7 +343,7 @@ export class SelectComponent
                     this.updatePosition();
                     this.optionList.highlight();
                     if (this.isOpen) {
-                        this.dropdown.moveHighlightedIntoView();
+                        //this.dropdown.moveHighlightedIntoView();
                     }
                 }
             });
@@ -431,14 +435,14 @@ export class SelectComponent
             }
             else if (key === this.KEYS.UP) {
                 this.optionList.highlightPreviousOption();
-                this.dropdown.moveHighlightedIntoView();
+                //this.dropdown.moveHighlightedIntoView();
                 if (!this.filterEnabled) {
                     event.preventDefault();
                 }
             }
             else if (key === this.KEYS.DOWN) {
                 this.optionList.highlightNextOption();
-                this.dropdown.moveHighlightedIntoView();
+                //this.dropdown.moveHighlightedIntoView();
                 if (!this.filterEnabled) {
                     event.preventDefault();
                 }

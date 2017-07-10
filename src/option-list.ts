@@ -20,7 +20,7 @@ export class OptionList {
         }
 
         this._options = options.map((option) => {
-            let o: Option = new Option(option.value, option.label);
+            let o: Option = new Option(option.value, option.label, option.tag);
             if (option.disabled) {
                 o.disable();
             }
@@ -182,6 +182,10 @@ export class OptionList {
 
     getHighlightedIndex() {
         return this.getHighlightedIndexFromList(this.filtered);
+    }
+
+    getHighlightedOption() {
+        return this._highlightedOption;
     }
 
     /** Util. **/

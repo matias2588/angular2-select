@@ -2,15 +2,17 @@ export class Option {
 
     value: string;
     label: string;
+    tag?: any;
 
     disabled: boolean;
     highlighted: boolean;
     selected: boolean;
     shown: boolean;
 
-    constructor(value: string, label: string) {
+    constructor(value: string, label: string, tag?: any) {
         this.value = value;
         this.label = label;
+        this.tag = tag;
 
         this.disabled = false;
         this.highlighted = false;
@@ -37,7 +39,8 @@ export class Option {
     undecoratedCopy() {
         return {
             label: this.label,
-            value: this.value
+            value: this.value,
+            tag: this.tag
         };
     }
 }
