@@ -325,7 +325,7 @@ export class SelectComponent
 
     /** Select. **/
 
-    private selectOption(option: Option) {
+    selectOption(option: Option) {
         if (!option.selected) {
             this.optionList.select(option, this.multiple);
             this.valueChanged();
