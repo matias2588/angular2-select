@@ -10,7 +10,7 @@
 
     <div class="single"
         *ngIf="!multiple">
-        <div class="value"
+        <div class="value" [ngClass]="{'no-clear': !allowClear || !hasSelected}"
             *ngIf="optionList.hasSelected()">
             {{optionList.selection[0].label}}
         </div>

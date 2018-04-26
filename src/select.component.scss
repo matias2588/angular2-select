@@ -42,6 +42,7 @@ ng-select {
             width: 100%;
             white-space: nowrap;
             margin: 3px 0;
+            position: relative;
 
             >div.value,
             >div.placeholder {
@@ -50,6 +51,7 @@ ng-select {
                 padding: 0 10px;
                 white-space: nowrap;
                 display: inline-block;
+                overflow-x: hidden; 
             }
 
             >div.placeholder {
@@ -61,6 +63,10 @@ ng-select {
                 width: calc(100% - 70px);
             }
 
+            >div.no-clear{
+                width: calc(100% - 35px);
+            }
+
             >div.clear,
             >div.toggle {
                 display: inline-block;
@@ -68,6 +74,7 @@ ng-select {
                 line-height: 30px;
                 text-align: center;
                 width: 30px;
+                position: absolute;
 
                 &:hover {
                     background-color: #ececec;
@@ -76,10 +83,12 @@ ng-select {
 
             >div.clear {
                 font-size:18px;
+                right:30px;
             }
 
             >div.toggle {
                 font-size:14px;
+                right:0;
             }
         }
 
@@ -130,4 +139,5 @@ ng-select {
             }
         }
     }
+
 }
