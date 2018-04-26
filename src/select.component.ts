@@ -65,6 +65,7 @@ export class SelectComponent
     hasSelected: boolean = false;
 
     // View state variables.
+    @Input()
     filterEnabled: boolean = true;
     filterInputWidth: number = 1;
     hasFocus: boolean = false;
