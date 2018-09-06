@@ -132,6 +132,8 @@ export class SelectComponent
     }
 
     onSelectContainerFocus() {
+        if(!this.isOpen)
+            this.openDropdown();
         this.onTouched();
     }
 
