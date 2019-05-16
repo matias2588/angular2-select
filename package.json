@@ -1,6 +1,6 @@
 {
   "name": "matias2588-select",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Select component for Angular2.",
   "main": "index.js",
   "repository": "git@github.com:matias2588/angular2-select.git",

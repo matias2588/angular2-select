@@ -96,8 +96,8 @@ export class OptionList {
 
     filter(term: string): boolean {
         let anyShown: boolean = false;
-
-        if (term.trim() === '') {
+        term = term.trim();
+        if (term === '') {
             this.resetFilter();
             anyShown = this.options.length > 0;
         }
