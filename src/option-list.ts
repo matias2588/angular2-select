@@ -19,8 +19,10 @@ export class OptionList {
             options = [];
         }
 
-        this._options = options.map((option) => {
+        this._options = options.map((option,index) => {
             let o: Option = new Option(option.value, option.label, option.tag);
+            o.order = index;
+            o.originalOrder = index;
             if (option.disabled) {
                 o.disable();
             }
@@ -103,14 +105,15 @@ export class OptionList {
             this.options.forEach((option) => {
                 let l: string = Diacritics.strip(option.label).toUpperCase();
                 let t: string = Diacritics.strip(term).toUpperCase();
-                option.shown = l.indexOf(t) > -1;
-
+                option.order = l.indexOf(t);
+                option.shown = option.order > -1;
                 if (option.shown) {
                     anyShown = true;
                 }
             });
 
         }
+        this._options = this.options.sort((a,b) => a.order - b.order)
         let toEmpty: boolean = this.hasShown && !anyShown;
 
         this.highlight();
@@ -120,8 +123,9 @@ export class OptionList {
     }
 
     private resetFilter() {
-        this.options.forEach((option) => {
+        this.options.forEach((option, index) => {
             option.shown = true;
+            option.order = option.originalOrder;
         });
     }
 

@@ -11,12 +11,13 @@ import {
     ViewEncapsulation,
     forwardRef
 } from '@angular/core';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
+
 import {STYLE} from './select.component.css';
 import {TEMPLATE} from './select.component.html';
 import {SelectDropdownComponent} from './select-dropdown.component';
 import {Option} from './option';
 import {OptionList} from './option-list';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export const SELECT_VALUE_ACCESSOR: ExistingProvider = {
     provide: NG_VALUE_ACCESSOR,
@@ -132,8 +133,6 @@ export class SelectComponent
     }
 
     onSelectContainerFocus() {
-        if(!this.isOpen)
-            this.openDropdown();
         this.onTouched();
     }
 

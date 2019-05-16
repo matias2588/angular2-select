@@ -8,6 +8,8 @@ export class Option {
     highlighted: boolean;
     selected: boolean;
     shown: boolean;
+    order: number;
+    originalOrder: number;
 
     constructor(value: string, label: string, tag?: any) {
         this.value = value;
