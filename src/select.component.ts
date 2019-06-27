@@ -44,7 +44,7 @@ export class SelectComponent
     @Input() highlightTextColor: string;
     @Input() multiple: boolean = false;
     @Input() noFilter: number = 0;
-    @Input() notFoundMsg: string = 'No results found';
+    @Input() notFoundMsg: string = 'No se encontraron resultados';
     @Input() placeholder: string = '';
     @Input() maxItems: number = 20;
     @Input() appendToBody: boolean = false;
