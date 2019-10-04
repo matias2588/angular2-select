@@ -3,6 +3,7 @@ export class Option {
     value: string;
     label: string;
     tag?: any;
+    label2?: string;
 
     disabled: boolean;
     highlighted: boolean;
@@ -11,10 +12,11 @@ export class Option {
     order: number;
     originalOrder: number;
 
-    constructor(value: string, label: string, tag?: any) {
+    constructor(value: string, label: string, tag?: any, label2?: string) {
         this.value = value;
         this.label = label;
         this.tag = tag;
+        this.label2 = label2;
 
         this.disabled = false;
         this.highlighted = false;
@@ -42,7 +44,8 @@ export class Option {
         return {
             label: this.label,
             value: this.value,
-            tag: this.tag
+            tag: this.tag,
+            label2: this.label2
         };
     }
 }

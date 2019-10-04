@@ -20,7 +20,7 @@ export class OptionList {
         }
 
         this._options = options.map((option,index) => {
-            let o: Option = new Option(option.value, option.label, option.tag);
+            let o: Option = new Option(option.value, option.label, option.tag, option.label2);
             o.order = index;
             o.originalOrder = index;
             if (option.disabled) {
@@ -106,6 +106,10 @@ export class OptionList {
                 let l: string = Diacritics.strip(option.label).toUpperCase();
                 let t: string = Diacritics.strip(term).toUpperCase();
                 option.order = l.indexOf(t);
+                if (option.order <= -1 && option.label2) {
+                    let l2: string = Diacritics.strip(option.label2).toUpperCase();
+                    option.order = l2.indexOf(t);
+                }
                 option.shown = option.order > -1;
                 if (option.shown) {
                     anyShown = true;

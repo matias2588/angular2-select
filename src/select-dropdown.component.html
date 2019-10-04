@@ -19,7 +19,8 @@
                 [ngStyle]="getOptionStyle(option)"
                 (click)="onOptionClick(option)"
                 (mouseover)="onOptionMouseover(option)">
-                {{option.label}}
+                {{option.label}}<br *ngIf="option.label2 && option.label2.length"/>
+                <small *ngIf="option.label2 && option.label2.length">{{option.label2}}</small>
             </li>
             <li
                 *ngIf="!optionList.hasShown"
