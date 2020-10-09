@@ -370,8 +370,8 @@ export class SelectComponent
     }
 
     private toggleSelectOption(option: Option) {
-        option.selected ?
-            this.deselectOption(option) : this.selectOption(option);
+        if(!option.selected)
+            this.selectOption(option);
     }
 
     private selectHighlightedOption() {
